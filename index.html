@@ -1,16 +1,15 @@
 <title>noooooooo</title>
-<script src="https://www.l2.io/ip.js?var=myipvar"></script>
 <script>
 var jq = document.createElement('script');
 jq.src = "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js";
 document.querySelector('head').appendChild(jq);
-jq.onload = procede;
-function procede(){
+jq.onload = next;
+/*function procede(){
   var gen = document.createElement('script');
   gen.src = "https://rawgit.com/colt05/scratch_wiki_verification_code_generator/gh-pages/generator.js";
   document.querySelector('head').appendChild(gen);
   gen.onload = next;
-}
+}*/
 function next(){
     var sha = document.createElement('script');
   sha.src = "//rawgit.com/kvz/locutus/master/src/php/strings/sha1.js";
@@ -24,3 +23,31 @@ var myvar = "err";
   document.getElementById("c").innerHTML = myvar;
 }
 </script>
+<script>
+  //old from generator.js just fixed
+var myipvar = "0.0.0.0";
+function importScript(url) {
+$.getScript(url);
+}
+function myIP() {
+importScript("https://www.l2.io/ip.js?var=myipvar")
+return myipvar;
+}
+ function generateCode() {
+try{
+importScript("https://rawgit.com/kvz/locutus/master/functions/strings/sha1.js");
+//var varTime = Math.floor(timeStamp / 1800);
+ var a = Math.floor(Date.now() / 1800);
+var timeStampString = a.toString();
+var b = timeStampString.concat(navigator.userAgent);
+var ip = myIP();
+var c = b.concat(ip);
+//var correct = sha1(c);
+return sha1(c);
+}catch(err){
+return err.message;
+}
+}
+</script>
+<p> Type this code: </p>
+<p id="c">(code will appear here after Javascript is done loading)</p>
