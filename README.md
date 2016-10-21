@@ -1,8 +1,5 @@
-# stupid
+# heroku
 Yep ^_^
 ## credits
-https://github.com/kvz/locutus/pull/173  
-https://github.com/colt05/scratch_wiki_verification_code_generator  
-https://github.com/colt05/scratch_wiki_verification_code_generator/blob/master/how_to_use_generator.js.md  
-https://github.com/colt05/scratch_wiki_verification_code_generator/blob/master/librarytest.html  
-You'll find more of the credits there
+Heroku
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04
