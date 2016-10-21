@@ -11,3 +11,5 @@ http://stackoverflow.com/questions/30014222/post-values-with-silex-form-submissi
 All of the stack exchange questions that told you to fix the .htaccess i.e. http://stackoverflow.com/questions/13423910/silex-routing-issues-other-paths-besides-root-giving-404  
 http://laravel.io/forum/04-22-2014-whoops-looks-like-something-went-wrong-with-new-installation  
 http://silex.sensiolabs.org/doc/cookbook/json_request_body.html  
+https://www.hurl.it/  
+### https://app.assembla.com/spaces/mod-share-iv/git/source/master/pages/register.php  
