@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 $app = new Silex\Application();
-
+$app['debug'] = true;
 
 $app->get('/', function() use($app) {
 return "9 + 10"; 
