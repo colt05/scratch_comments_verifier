@@ -1,0 +1,6 @@
+{
+  "name": "Nothing",
+  "description": "Nothing",
+  "repository": "https://github.com/heroku/php-getting-started",
+  "addons": []
+}

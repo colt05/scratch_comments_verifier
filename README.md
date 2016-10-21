@@ -1,7 +1,28 @@
-# heroku
-Yep ^_^
-## credits
-Heroku  
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04  
-http://www.cyberciti.biz/tips/how-can-i-zipping-and-unzipping-files-under-linux.html  
-http://stackoverflow.com/questions/14912818/class-not-found-using-php-silex  
+# php-getting-started
+
+A barebones PHP app that makes use of the [Silex](http://silex.sensiolabs.org/) web framework, which can easily be deployed to Heroku.
+
+This application supports the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) article - check it out.
+
+## Deploying
+
+Install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+
+```sh
+$ git clone git@github.com:heroku/php-getting-started.git # or clone your own fork
+$ cd php-getting-started
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
+
+or
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## Documentation
+
+For more information about using PHP on Heroku, see these Dev Center articles:
+
+- [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php)
+- [PHP on Heroku](https://devcenter.heroku.com/categories/php)
