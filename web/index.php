@@ -9,7 +9,7 @@ $app = new Silex\Application();
 $app['debug'] = true;
 
 $app->get('/', function() use($app) {
-return "9 + 10"; 
+    return "9 + 10"; 
 });
 
 $app->post('/test', function (Request $request) {
@@ -22,7 +22,7 @@ $app->post('/userCode', function (Request $request) {
     //MODSHARE CODE BEGIN
     $api_url = 'http://scratch.mit.edu/site-api/comments/project/' . '126929077/' . '?page=1&salt=' . md5(time());
     $data = file_get_contents($api_url);
-        if (!$data) {
+    if (!$data) {
         return '{"success":"no","code":"","error":"api"}';
     }
     $success = false;
