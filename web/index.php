@@ -18,7 +18,7 @@ $app->post('/test', function (Request $request) {
 });
 
 $app->post('/userCode', function (Request $request) {
-    $data = json_decode($request->getContent(), true);
+    $dataa = json_decode($request->getContent(), true);
     //MODSHARE CODE BEGIN
     $api_url = 'http://scratch.mit.edu/site-api/comments/project/' . '126929077/' . '?page=1&salt=' . md5(time());
     $data = file_get_contents($api_url);
@@ -30,7 +30,7 @@ $app->post('/userCode', function (Request $request) {
     foreach ($matches[2] as $key => $val) {
         $user = $matches[1][$key];
         $comment = trim($val);
-        if ($user == $data['username'] && $comment == $data['comment']) {
+        if ($user == $dataa['username'] && $comment == $dataa['comment']) {
             $success = true;
             return '{"success":"yes","code":"","error":""}';
             break;
