@@ -38,7 +38,7 @@ $app->post('/userCode', function (Request $request) {
     }
     //MODSHARE CODE END
     if (!$success) {
-        echo '{"success":"no","code":"","error":"user"}';
+        return '{"success":"no","code":"","error":"user"}';
     }
     
 });
