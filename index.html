@@ -12,7 +12,7 @@ jq.onload = next;
 }*/
 function next(){
     var sha = document.createElement('script');
-  sha.src = "//rawgit.com/kvz/locutus/master/src/php/strings/sha1.js";
+  sha.src = "//rawgit.com/Caligatio/jsSHA/master/src/sha.js";
   document.querySelector('head').appendChild(sha);
   sha.onload = code;
 }
@@ -35,7 +35,7 @@ return myipvar;
 }
  function generateCode() {
 try{
-importScript("https://rawgit.com/kvz/locutus/master/functions/strings/sha1.js");
+importScript("//rawgit.com/Caligatio/jsSHA/master/src/sha.js");
 //var varTime = Math.floor(timeStamp / 1800);
  var a = Math.floor(Date.now() / 1800);
 var timeStampString = a.toString();
