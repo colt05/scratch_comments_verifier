@@ -23,6 +23,7 @@ var myvar = "err";
   myvar = generateCode();
   alert(myvar);
   document.getElementById("c").innerHTML = myvar;
+  document.getElementById("cc").value = myvar;
 }
 </script>
 <script>
@@ -54,10 +55,16 @@ return err.message;
   //I wish github brought the old html editor back. it was easier to make javascript
   function check{
     //here we go again!
-    asyncgetcallback(
+   
   }
 </script>
 <p> Type this code: </p>
 <p id="c">(code will appear here after Javascript is done loading)</p>
-<button onclick="check()">Did I type the code?</button>
+<form action="//scratchmessagesverifier.herokuapp.com/userCode" method="POST">
+  Username:<br>
+  <input type="text" name="user" value="Username">
+  <input type="hidden" name="comment" id="cc" value="h">
+  <br>
+  <input type="submit" value="Did I type the code?">
+</form>
 2016
