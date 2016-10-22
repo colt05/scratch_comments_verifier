@@ -37,7 +37,9 @@ $app->post('/userCode', function (Request $request) {
         $user = $matches[1][$key];
         $comment = trim($val);
         echo $user;
+        echo "=======";
         echo $comment;
+        echo "===-===";
         //echo $dataa['comment'];
         if ($user == $dataa['username'] && $comment == $dataa['comment']) {
             $success = true;
