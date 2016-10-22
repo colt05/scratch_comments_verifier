@@ -34,8 +34,8 @@ $app->post('/userCode', function (Request $request) {
     foreach ($matches[2] as $key => $val) {
         $user = $matches[1][$key];
         $comment = trim($val);
-        $app['monolog']->addDebug($dataa['username']);
-        $app['monolog']->addDebug($dataa['comment']);
+        echo $dataa['username'];
+        echo $dataa['comment'];
         if ($user == $dataa['username'] && $comment == $dataa['comment']) {
             $success = true;
             return '{"success":"yes","code":"","error":""}';
