@@ -13,3 +13,4 @@ http://laravel.io/forum/04-22-2014-whoops-looks-like-something-went-wrong-with-n
 http://silex.sensiolabs.org/doc/cookbook/json_request_body.html  
 https://www.hurl.it/  
 ### https://app.assembla.com/spaces/mod-share-iv/git/source/master/pages/register.php  
+php.net  
