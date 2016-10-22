@@ -18,7 +18,7 @@ $app->get('/', function() use($app) {
 
 $app->post('/test', function (Request $request) {
     $message = $request->get('test');
-    return test;
+    return $message;
 });
 
 $app->post('/userCode', function (Request $request) {
@@ -37,7 +37,7 @@ $app->post('/userCode', function (Request $request) {
         $user = $matches[1][$key];
         $comment = trim($val);
         echo $dataa['username'];
-        echo $dataa['comment'];
+        //echo $dataa['comment'];
         if ($user == $dataa['username'] && $comment == $dataa['comment']) {
             $success = true;
             return '{"success":"yes","code":"","error":""}';
