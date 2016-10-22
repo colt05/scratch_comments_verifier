@@ -8,6 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 $app = new Silex\Application();
 $app['debug'] = true;
 
+$app->register(new Silex\Provider\MonologServiceProvider(), array(
+  'monolog.logfile' => 'php://stderr',
+));
+
 $app->get('/', function() use($app) {
     return "9 + 10"; 
 });
@@ -30,6 +34,8 @@ $app->post('/userCode', function (Request $request) {
     foreach ($matches[2] as $key => $val) {
         $user = $matches[1][$key];
         $comment = trim($val);
+        $app['monolog']->addDebug($dataa['username']);
+        $app['monolog']->addDebug($dataa['comment']);
         if ($user == $dataa['username'] && $comment == $dataa['comment']) {
             $success = true;
             return '{"success":"yes","code":"","error":""}';
