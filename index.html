@@ -60,11 +60,31 @@ return err.message;
 </script>
 <p> Type this code: </p>
 <p id="c">(code will appear here after Javascript is done loading)</p>
-<form action="//scratchmessagesverifier.herokuapp.com/userCode" method="POST">
+<form action="//scratchmessagesverifier.herokuapp.com/verifyCode" method="POST">
   Username:<br>
   <input type="text" name="username" value="Username">
   <input type="hidden" name="comment" id="cc" value="h">
   <br>
   <input type="submit" value="Did I type the code?">
 </form>
-2016
+
+<h1>node.js->php test</h1>
+<script>
+  asyncgetcallback("//scratchmessages2.herokuapp.com/getCode", "scratch_comments_verifier", false, function(resp222) {
+    var jobject = JSON.parse(resp222);
+    document.getElementById("cc").value = jobject.codeDec;
+    document.getElementById("cd").value = jobject.codeEnc;
+    document.getElementById("c22").value = jobject.codeDec;
+  });
+</script>
+<p id="c22"></p>
+<form action="https://scratchmessages2.herokuapp.com/verifyCode" method="POST">
+  Username:<br>
+  <input type="text" name="username" value="Username">
+  <input type="hidden" name="dec" id="cc" value="h">
+  <input type="hidden" name="enc" id="cd" value="h">
+  <br>
+  <input type="submit" value="Verify">
+</form>
+
+2016-2017
