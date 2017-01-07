@@ -47,6 +47,7 @@ app.get("/getCode", function(req, res) {
 });
 
 app.post("/verifyCode", function(req, res) {
+  console.log(req.rawBody);
   req.body = JSON.parse(req.rawBody);
   console.log(req.body);
   try {
