@@ -36,10 +36,10 @@ $app->post('/userCode', function (Request $request) {
     foreach ($matches[2] as $key => $val) {
         $user = $matches[1][$key];
         $comment = trim($val);
-        //$userIndexOfWeirdString = strpos($user, '" id="comment-user" data-comment-user="'); //Offset
-        //$user2222 = substr($user, $userIndexOfWeirdString);    
-        $user2222 = substr($user, strpos($data, '" id="comment-user" data-comment-user="') + 1); 
-        $user = $user2222;
+        $userIndexOfWeirdString = strpos($user, '" id="comment-user" data-comment-user="'); //Offset
+        $user2222 = substr($user, $userIndexOfWeirdString);
+        $user3333 = substr($user, strlen('" id="comment-user" data-comment-user="'));
+        $user = $user3333;
         echo $user;
         echo "=======";
         echo $comment;
