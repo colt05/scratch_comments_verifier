@@ -1,5 +1,6 @@
 var express = require('express');
 var httppost = require("http-post");
+var xor = require('base64-xor');
 var sha1 = require('sha1');
 var app = express();
 
@@ -23,8 +24,20 @@ app.get("/getCode", function(req, res) {
   var c = b.concat(ip);
   var jsonObj = {};
   jsonObj.codeDec = sha1(c); //fixed to use node
+  jsonObj.codeEnc = xor.encode(process.env.secret, process.env.magic.concat(sha1(c)));
   res.end(JSON.stringify(jsonObj));
 });
+
+app.post("/verifyCode", function(req, res) {
+  try {
+    if (req.params.enc == xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))) {
+    res.end("true");
+    }
+  } catch (ex) {
+    res.end("false");
+  }
+});
+
 function ab2str(buf) {
   return String.fromCharCode.apply(null, new Uint8Array(buf));
 }
