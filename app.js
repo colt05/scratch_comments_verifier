@@ -32,7 +32,7 @@ app.post("/verifyCode", function(req, res) {
   try {
     if (req.params.enc == xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))) {
     //usedCode(req.params.username, req.params.dec)
-    httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":username,"comment":comment}, {}, function(resb) {
+    httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":req.params.username,"comment":req.params.dec}, {}, function(resb) {
     resb.on('data', function(chunk) {
         res.end(ab2str(chunk));
     });
