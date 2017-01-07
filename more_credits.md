@@ -6,3 +6,6 @@ https://www.npmjs.com/package/sha1
 https://www.npmjs.com/package/express  
 https://www.npmjs.com/package/base64-xor  
 https://runkit.com/npm/base64-xor  
+http://stackoverflow.com/questions/19266329/node-js-get-clients-ip  
+https://www.hacksparrow.com/detect-browser-user-agent-in-express-js-node-js.html  
+http://enable-cors.org/server_expressjs.html  
