@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "http-post": "^0.1.1"
+    "http-post": "^0.1.1",
+    "sha1": "^1.1.1",
+    "express": "^4.14.0"
   }
 }
