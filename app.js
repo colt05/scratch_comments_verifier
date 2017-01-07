@@ -38,6 +38,7 @@ app.get("/getCode", function(req, res) {
 });
 
 app.post("/verifyCode", function(req, res) {
+  console.log(req.body);
   try {
     if (req.params.enc == xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))) {
     //usedCode(req.params.username, req.params.dec)
@@ -49,7 +50,7 @@ app.post("/verifyCode", function(req, res) {
     } else {
       res.end("false");
       console.log("no match. ".concat(req.body.enc).concat(" ").concat(xor.encode(process.env.secret, process.env.magic.concat(req.body.dec))));
-      console.log(req.params.enc.concat(" ").concat(req.body.dec));
+      console.log(req.body.enc.concat(" ").concat(req.body.dec));
     }
   } catch (ex) {
     res.end("false");
