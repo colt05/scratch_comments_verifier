@@ -5,7 +5,16 @@ var sha1 = require('sha1');
 var app = express();
 var bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
+app.use(function(req, res, next) {
+  req.rawBody = '';
+  req.setEncoding('utf8');
+
+  req.on('data', function(chunk) { 
+    req.rawBody += chunk;
+  });
+
+  next();
+});
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -38,6 +47,7 @@ app.get("/getCode", function(req, res) {
 });
 
 app.post("/verifyCode", function(req, res) {
+  req.body = JSON.parse(req.rawBody);
   console.log(req.body);
   try {
     if (req.params.enc == xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))) {
