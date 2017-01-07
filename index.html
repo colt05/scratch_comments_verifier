@@ -74,7 +74,7 @@ return err.message;
     var jobject = JSON.parse(resp222);
     document.getElementById("cc").value = jobject.codeDec;
     document.getElementById("cd").value = jobject.codeEnc;
-    document.getElementById("c22").value = jobject.codeDec;
+    document.getElementById("c22").innerHTML = jobject.codeDec;
   });
 </script>
 <p id="c22"></p>
