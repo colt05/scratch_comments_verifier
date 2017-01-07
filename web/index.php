@@ -36,7 +36,7 @@ $app->post('/userCode', function (Request $request) {
     foreach ($matches[2] as $key => $val) {
         $user = $matches[1][$key];
         $comment = trim($val);
-        $user = substr($user, 0, strpos($variable, '" id="comment-user" data-comment-user="'));
+        list($user) = explode("'", $user, 2);
         echo $user;
         echo "=======";
         echo $comment;
