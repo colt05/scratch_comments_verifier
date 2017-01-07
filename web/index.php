@@ -41,10 +41,10 @@ $app->post('/userCode', function (Request $request) {
         $user3333 = substr($user2222, strlen('" id="comment-user" data-comment-user="'));
         //$user4444 = substr($user3333, strlen('user="'));
         $user = $user3333;
-        echo $user;
-        echo "=======";
-        echo $comment;
-        echo "===-===";
+       // echo $user;
+       // echo "=======";
+       // echo $comment;
+       // echo "===-===";
         //echo $dataa['comment'];
         if ($user == $dataa['username'] && $comment == $dataa['comment']) {
             $success = true;
@@ -54,10 +54,10 @@ $app->post('/userCode', function (Request $request) {
     }
     //MODSHARE CODE END
     if (!$success) {
-        echo "END";
-        echo $dataa['username'];
-        echo " -- ";
-        echo $dataa['comment'];
+        //echo "END";
+        //echo $dataa['username'];
+        //echo " -- ";
+        //echo $dataa['comment'];
         return '{"success":"no","code":"","error":"user"}';
     }
     
