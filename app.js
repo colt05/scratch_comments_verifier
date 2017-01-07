@@ -35,7 +35,7 @@ app.post("/verifyCode", function(req, res) {
     httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":username,"comment":comment}, {}, function(resb) {
     resb.on('data', function(chunk) {
         res.end(ab2str(chunk));
-    }
+    });
     });
     } else {
       res.end("false");
