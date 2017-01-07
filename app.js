@@ -46,12 +46,21 @@ app.post("/verifyCode", function(req, res) {
     } else {
       res.end("false");
       console.log("no match. ".concat(req.params.enc).concat(" ").concat(xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))));
+      console.log(req.params.enc.concat(" ").concat(req.params.dec));
     }
   } catch (ex) {
     res.end("false");
     console.log("Error");
     console.log(ex);
   }
+});
+
+app.get("/test", function(req, res) {
+  httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":"colt05","comment":"what"}, {}, function(resb) {
+    resb.on('data', function(chunk) {
+        res.end(ab2str(chunk));
+    });
+    });
 });
 
 function ab2str(buf) {
