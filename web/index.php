@@ -23,7 +23,7 @@ $app->post('/test', function (Request $request) {
 
 $app->post('/userCode', function (Request $request) {
     //$dataa = json_decode($request->getContent(), true);
-    $dataa['user'] = $request->get('user');
+    $dataa['username'] = $request->get('username');
     $dataa['comment'] = $request->get('comment');
     //MODSHARE CODE BEGIN
     $api_url = 'http://scratch.mit.edu/site-api/comments/project/' . '126929077/' . '?page=1&salt=' . md5(time());
