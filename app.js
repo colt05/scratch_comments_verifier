@@ -3,6 +3,9 @@ var httppost = require("http-post");
 var xor = require('base64-xor');
 var sha1 = require('sha1');
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -38,15 +41,15 @@ app.post("/verifyCode", function(req, res) {
   try {
     if (req.params.enc == xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))) {
     //usedCode(req.params.username, req.params.dec)
-    httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":req.params.username,"comment":req.params.dec}, {}, function(resb) {
+    httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":req.body.username,"comment":req.body.dec}, {}, function(resb) {
     resb.on('data', function(chunk) {
         res.end(ab2str(chunk));
     });
     });
     } else {
       res.end("false");
-      console.log("no match. ".concat(req.params.enc).concat(" ").concat(xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))));
-      console.log(req.params.enc.concat(" ").concat(req.params.dec));
+      console.log("no match. ".concat(req.body.enc).concat(" ").concat(xor.encode(process.env.secret, process.env.magic.concat(req.body.dec))));
+      console.log(req.params.enc.concat(" ").concat(req.body.dec));
     }
   } catch (ex) {
     res.end("false");
