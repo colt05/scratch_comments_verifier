@@ -45,9 +45,12 @@ app.post("/verifyCode", function(req, res) {
     });
     } else {
       res.end("false");
+      console.log("no match");
     }
   } catch (ex) {
     res.end("false");
+    console.log("Error");
+    console.log(ex);
   }
 });
 
