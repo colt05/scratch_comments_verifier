@@ -39,7 +39,7 @@ $app->post('/userCode', function (Request $request) {
         $userIndexOfWeirdString = strpos($user, '" id="comment-user" data-comment-user="'); //Offset
         $user2222 = substr($user, $userIndexOfWeirdString);
         $user3333 = substr($user, strlen('" id="comment-user" data-comment-user="'));
-        $user4444 = substr($user3333, strlen('user="') + 1);
+        $user4444 = substr($user3333, strlen('user="'));
         $user = $user4444;
         echo $user;
         echo "=======";
