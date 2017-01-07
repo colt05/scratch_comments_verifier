@@ -4,6 +4,12 @@ var xor = require('base64-xor');
 var sha1 = require('sha1');
 var app = express();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 function code(ip) {
   var a = Math.floor(Date.now() / 1800);
   var timeStampString = a.toString();
