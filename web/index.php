@@ -36,7 +36,9 @@ $app->post('/userCode', function (Request $request) {
     foreach ($matches[2] as $key => $val) {
         $user = $matches[1][$key];
         $comment = trim($val);
-        list($user) = explode("'", $user, 2);
+        $userIndexOfWeirdString = strpos($user, '" id="comment-user" data-comment-user="'); //Offset
+        $user2222 = substr($user, $userIndexOfWeirdString);
+        $user = $user2222;
         echo $user;
         echo "=======";
         echo $comment;
