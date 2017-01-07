@@ -45,7 +45,7 @@ app.post("/verifyCode", function(req, res) {
     });
     } else {
       res.end("false");
-      console.log("no match");
+      console.log("no match. ".concat(req.params.enc).concat(" ").concat(xor.encode(process.env.secret, process.env.magic.concat(req.params.dec)));
     }
   } catch (ex) {
     res.end("false");
