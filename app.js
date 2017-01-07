@@ -31,7 +31,14 @@ app.get("/getCode", function(req, res) {
 app.post("/verifyCode", function(req, res) {
   try {
     if (req.params.enc == xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))) {
-    res.end("true");
+    //usedCode(req.params.username, req.params.dec)
+    httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":username,"comment":comment}, {}, function(resb) {
+    resb.on('data', function(chunk) {
+        res.end(ab2str(chunk));
+    }
+    });
+    } else {
+      res.end("false");
     }
   } catch (ex) {
     res.end("false");
@@ -50,11 +57,5 @@ function str2ab(str) {
   }
   return buf;
 }
-function usedCode(username, comment, cb) {
-httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":username,"comment":comment}, {}, function(res) {
-    res.on('data', function(chunk) {
-        cb(ab2str(chunk));
-    });
-});
-}
+
 app.listen(process.env.PORT);
