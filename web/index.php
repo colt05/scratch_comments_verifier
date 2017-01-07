@@ -54,6 +54,10 @@ $app->post('/userCode', function (Request $request) {
     }
     //MODSHARE CODE END
     if (!$success) {
+        echo "END";
+        echo $dataa['username'];
+        echo " -- ";
+        echo $dataa['comment'];
         return '{"success":"no","code":"","error":"user"}';
     }
     
