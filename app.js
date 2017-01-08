@@ -54,7 +54,7 @@ app.post("/verifyCode", function(req, res) {
   //req.body = JSON.parse(req.rawBody);
   console.log(req.body);
   try {
-    if (req.params.enc == xor.encode(process.env.secret, process.env.magic.concat(req.params.dec))) {
+    if (req.body.enc == xor.encode(process.env.secret, process.env.magic.concat(req.body.dec))) {
     //usedCode(req.params.username, req.params.dec)
     httppost("http://scratchmessagesverifier.herokuapp.com/userCode", {"username":req.body.username,"comment":req.body.dec}, {}, function(resb) {
     resb.on('data', function(chunk) {
