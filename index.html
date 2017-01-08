@@ -77,7 +77,7 @@ return err.message;
 <form action="https://scratchmessages2.herokuapp.com/verifyCode" method="POST">
   Username:<br>
   <input type="text" name="username" value="Username">
-  <input type="hidden" name="dec" id="cc" value="h">
+  <input type="hidden" name="dec" id="ccc" value="h">
   <input type="hidden" name="enc" id="cd" value="h">
   <br>
   <input type="submit" value="Verify">
@@ -85,7 +85,7 @@ return err.message;
 <script>importGet(function() {
       asyncgetcallback("//scratchmessages2.herokuapp.com/getCode", "scratch_comments_verifier", false, function(resp222) {
     var jobject = JSON.parse(resp222);
-    document.getElementById("cc").value = jobject.codeDec;
+    document.getElementById("ccc").value = jobject.codeDec;
     document.getElementById("cd").value = jobject.codeEnc;
     document.getElementById("c22").innerHTML = jobject.codeDec;
   });
