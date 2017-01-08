@@ -1,7 +1,7 @@
 <title>noooooooo</title>
 <h1>Warning: it may take a long time to load the verification page because Heroku must "unidle" before accepting the post request that is sent to the page.</h1>
-<script src="https://cdn.rawgit.com/colt05/get-request/master/latestupdater.js"></script>
-<script>importUpdater();</script>
+<script src="https://cdn.rawgit.com/colt05/get-request/f00266450a37b9d943d5cca553dc53ecfe9bae9a/latest.js"></script>
+
 <script>
 var jq = document.createElement('script');
 jq.src = "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js";
@@ -71,12 +71,7 @@ return err.message;
 
 <h1>node.js->php test</h1>
 <script>
-  asyncgetcallback("//scratchmessages2.herokuapp.com/getCode", "scratch_comments_verifier", false, function(resp222) {
-    var jobject = JSON.parse(resp222);
-    document.getElementById("cc").value = jobject.codeDec;
-    document.getElementById("cd").value = jobject.codeEnc;
-    document.getElementById("c22").innerHTML = jobject.codeDec;
-  });
+
 </script>
 <p id="c22"></p>
 <form action="https://scratchmessages2.herokuapp.com/verifyCode" method="POST">
@@ -87,5 +82,13 @@ return err.message;
   <br>
   <input type="submit" value="Verify">
 </form>
+<script>importGet(function() {
+      asyncgetcallback("//scratchmessages2.herokuapp.com/getCode", "scratch_comments_verifier", false, function(resp222) {
+    var jobject = JSON.parse(resp222);
+    document.getElementById("cc").value = jobject.codeDec;
+    document.getElementById("cd").value = jobject.codeEnc;
+    document.getElementById("c22").innerHTML = jobject.codeDec;
+  });
+  });</script>
 
 2016-2017
