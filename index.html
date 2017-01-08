@@ -83,7 +83,7 @@ return err.message;
   <input type="submit" value="Verify">
 </form>
 <script>importGet(function() {
-      asyncgetcallback("//scratchmessages2.herokuapp.com/getCode", "scratch_comments_verifier", false, function(resp222) {
+      asyncgetcallback("//scratchmessages2.herokuapp.com/getCode?time=".concat(Date.now()), "scratch_comments_verifier", false, function(resp222) {
     var jobject = JSON.parse(resp222);
     document.getElementById("ccc").value = jobject.codeDec;
     document.getElementById("cd").value = jobject.codeEnc;
